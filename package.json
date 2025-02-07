@@ -1,7 +1,7 @@
 {
   "name": "queen-lounge",
   "version": "0.1.0",
-  "homepage": "https://nhhn25.github.io/queen-lounge/",
+  "homepage": "https://nhhn25.github.io/queen-lounge",
   "private": true,
   "dependencies": {
     "bootstrap": "^5.3.3",
