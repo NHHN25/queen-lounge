@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/queen-lounge/static/css/main.d82e8070.css",
-    "main.js": "/queen-lounge/static/js/main.111d91b0.js",
+    "main.js": "/queen-lounge/static/js/main.3f05b48f.js",
     "static/media/slick.svg": "/queen-lounge/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/queen-lounge/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/queen-lounge/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/queen-lounge/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/queen-lounge/index.html",
     "main.d82e8070.css.map": "/queen-lounge/static/css/main.d82e8070.css.map",
-    "main.111d91b0.js.map": "/queen-lounge/static/js/main.111d91b0.js.map"
+    "main.3f05b48f.js.map": "/queen-lounge/static/js/main.3f05b48f.js.map"
   },
   "entrypoints": [
     "static/css/main.d82e8070.css",
-    "static/js/main.111d91b0.js"
+    "static/js/main.3f05b48f.js"
   ]
 }
