@@ -2,6 +2,8 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import CarouselLux from '../components/CarouselLux';
+import { Link } from 'react-router-dom';
+
 
 function Home() {
     return (
@@ -13,7 +15,7 @@ function Home() {
                     <h1 className="embossed display-4">Thỏa mãn đam mê âm nhạc tại Queen Lounge</h1>
                     <p className="lead">Hotline đặt phòng: 1900 5225</p>
                     <div className="mt-3">
-                        <Button href="/booking" className="hero-btn btn-lg me-2">
+                        <Button as={Link} to="/booking" className="hero-btn btn-lg me-2">
                             Đặt Phòng
                         </Button>
                     </div>
