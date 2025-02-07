@@ -92,7 +92,7 @@ function CarouselLux() {
         <div key={event.id} className="px-2">
           <Card className="event-card">
             <div style={{ position: 'relative' }}>
-              <Card.Img variant="top" src={event.image} alt={event.title} />
+              <Card.Img variant="top" src={`${process.env.PUBLIC_URL}${event.image}`} alt={event.title} />
               <div className="event-overlay">
                 <Button href="/booking" className="event-btn">
                   Book Now

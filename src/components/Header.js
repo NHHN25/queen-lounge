@@ -37,7 +37,7 @@ function Header() {
           <Container className="header-container">
             <div className="header-left">
               <Link to="/" className="brand">
-                <img src="/images/logo.png" alt="Queen Lounge" className="logo" />
+                <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="Queen Lounge" className="logo" />
               </Link>
             </div>
             <Navbar.Toggle aria-controls="navbar-nav" className="header-toggler" />

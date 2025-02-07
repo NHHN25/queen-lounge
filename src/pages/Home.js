@@ -8,7 +8,7 @@ function Home() {
         <div>
             {/* HERO SECTION */}
             <div className="hero-banner">
-                <img src="/images/hero.jpg" alt="Queen Lounge Hero" />
+                <img src={`${process.env.PUBLIC_URL}/images/hero.jpg`} alt="Queen Lounge Hero" />
                 <div className="hero-overlay">
                     <h1 className="embossed display-4">Thỏa mãn đam mê âm nhạc tại Queen Lounge</h1>
                     <p className="lead">Hotline đặt phòng: 1900 5225</p>
@@ -31,7 +31,7 @@ function Home() {
             <div className="about-section">
                 {/* Left Column: About Image */}
                 <div className="about-image d-none d-md-block">
-                    <img src="/images/about.jpg" alt="About Queen Lounge" />
+                    <img src={`${process.env.PUBLIC_URL}/images/about.jpg`} alt="About Queen Lounge" />
                 </div>
                 {/* Right Column: About Text */}
                 <div className="about-text">
