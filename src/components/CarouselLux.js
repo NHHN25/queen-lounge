@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import { Card, Button } from 'react-bootstrap';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from 'react-router-dom';
 
 const eventsData = [
   {
@@ -94,7 +95,7 @@ function CarouselLux() {
             <div style={{ position: 'relative' }}>
               <Card.Img variant="top" src={`${process.env.PUBLIC_URL}${event.image}`} alt={event.title} />
               <div className="event-overlay">
-                <Button href="/booking" className="event-btn">
+                <Button as={Link} to="/booking" className="event-btn">
                   Book Now
                 </Button>
               </div>
