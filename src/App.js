@@ -1,6 +1,6 @@
 // src/App.js
 import React from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Booking from './pages/Booking';
@@ -10,11 +10,11 @@ function App() {
   return (
     <Router>
       <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/booking" component={Booking} />
-        {/* Add other routes as needed */}
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/booking" element={<Booking />} />
+        {/* Add additional routes as needed */}
+      </Routes>
       <Footer />
     </Router>
   );
