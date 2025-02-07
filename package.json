@@ -1,6 +1,7 @@
 {
   "name": "queen-lounge",
   "version": "0.1.0",
+  "homepage": "https://nhhn25.github.io/queen-lounge/",
   "private": true,
   "dependencies": {
     "bootstrap": "^5.3.3",
@@ -13,8 +14,7 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
-    "web-vitals": "^4.2.4",
-    "homepage": "https://nhhn25.github.io/queen-lounge/"
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
