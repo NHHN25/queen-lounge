@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+/* src/index.css */
+
+/* Global Styles */
+body {
+  background-color: #ffffff;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings: Use Roboto Condensed for a luxurious look with a subtle drop shadow */
+h1, h2, h3, h4, h5, h6, .embossed {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #cfaa78; /* Luxurious gold */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Paragraphs: Subtle shadow for readability */
+p {
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+/* HERO SECTION */
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* Full viewport height */
+}
+
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Dim the image using a brightness filter */
+  filter: brightness(0.4);
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero-banner img:hover {
+  transform: scale(1.05);
+}
+
+/* Hero overlay: texts placed directly over the dimmed image */
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 90%;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-overlay p.lead {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* For larger screens, force hero text to one line */
+@media (min-width: 992px) {
+  .hero-overlay h1,
+  .hero-overlay p.lead {
+    white-space: nowrap;
+  }
+}
+
+/* HERO BUTTON: Updated for a modern elegant hover effect matching the carousel */
+.hero-btn {
+  background: linear-gradient(45deg, #d2a264, #e09c43) !important; /* Elegant gold/orange gradient */
+  border: none !important;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 1rem 2.5rem;
+  border-radius: 50px; /* Fully rounded capsule shape */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px 3px rgba(207, 170, 120, 0.8);
+  background: linear-gradient(45deg, #d2a264, #e09c43) !important;
+}
+
+
+/* ABOUT SECTION */
+/* Two-column layout: left column (image) approx. 85vh, right column (text) */
+.about-section {
+  display: flex;
+  min-height: 100vh;
+}
+
+.about-image {
+  flex: 0 0 50%;
+  max-width: 50%;
+  height: 85vh;
+  overflow: hidden;
+  border: double 6px #232323;
+  border-radius: 8px;
+  margin: auto 0;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+.about-text {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.about-text h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.about-text h3 {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Responsive adjustments for About section */
+@media (max-width: 767px) {
+  .about-section {
+    flex-direction: column;
+  }
+  .about-image,
+  .about-text {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* EVENTS CAROUSEL */
+/* Uniform event card size with larger posters */
+.event-card {
+  background-color: #ffffff;
+  border: 1px solid #cfaa78;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.event-card img {
+  width: 100%;
+  height: 350px; /* Fixed uniform poster size */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.event-card img:hover {
+  transform: scale(1.05);
+}
+
+/* EVENT CARD OVERLAY: Show booking button on hover */
+.event-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-card:hover .event-overlay {
+  opacity: 1;
+}
+
+/* Booking button in event overlay */
+.event-btn {
+  background-color: #cfaa78 !important;
+  border: none !important;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.event-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px 3px rgba(207, 170, 120, 0.8);
+}
+
+/* Carousel Heading: Larger heading */
+.carousel-heading {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Slick slider dot customization for paging indicators */
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #ebbb80; /* Brighter gold */
+  box-shadow: none;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ebbb80;
+  opacity: 1;
+  box-shadow: none;
+}
+
+/* Additional container padding */
+.container {
+  padding: 0 15px;
+}
+
+.main-content {
+  margin-top: 150px; /* Adjust the value to match your header height */
+}

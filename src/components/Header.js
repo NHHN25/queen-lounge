@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Navbar, Nav } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
-import '../styles/header.css';
+import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import Link from 'next/link';
+import { useRouter } from 'next/router'; // <-- add this import
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
+  const router = useRouter(); // <-- add router hook
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -36,31 +39,59 @@ function Header() {
         >
           <Container className="header-container">
             <div className="header-left">
-              <Link to="/" className="brand">
-                <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="Queen Lounge" className="logo" />
+              <Link legacyBehavior href="/" passHref>
+                <a className="brand">
+                  <img src="/images/logo.png" alt="Queen Acoustic" className="logo" />
+                </a>
               </Link>
             </div>
             <Navbar.Toggle aria-controls="navbar-nav" className="header-toggler" />
             <Navbar.Collapse id="navbar-nav" className="header-collapse">
               <Nav className="mx-auto header-nav">
-                <NavLink exact to="/" className="nav-link" activeClassName="active">
-                  Trang Chủ
-                </NavLink>
-                <NavLink to="/phong-hat" className="nav-link" activeClassName="active">
-                  Phòng Hát
-                </NavLink>
-                <NavLink to="/su-kien" className="nav-link" activeClassName="active">
-                  Sự Kiện &amp; Ưu Đãi
-                </NavLink>
-                <NavLink to="/khoanh-khac" className="nav-link" activeClassName="active">
-                  Khoảnh Khắc
-                </NavLink>
-                <NavLink to="/tin-tuc" className="nav-link" activeClassName="active">
-                  Tin Tức
-                </NavLink>
-                <NavLink to="/lien-he" className="nav-link" activeClassName="active">
-                  Liên Hệ
-                </NavLink>
+                <Link legacyBehavior href="/" passHref>
+                  <Nav.Link>Trang Chủ</Nav.Link>
+                </Link>
+                <NavDropdown title="Giới Thiệu" id="nav-dropdown-gioi-thieu">
+                  <Link legacyBehavior href="/gioi-thieu/ca-si" passHref>
+                    <NavDropdown.Item>Ca sĩ</NavDropdown.Item>
+                  </Link>
+                  <Link legacyBehavior href="/gioi-thieu/ban-nhac" passHref>
+                    <NavDropdown.Item>Ban nhạc</NavDropdown.Item>
+                  </Link>
+                  <Link legacyBehavior href="/gioi-thieu/bien-tap-chuong-trinh" passHref>
+                    <NavDropdown.Item>Biên tập chương trình</NavDropdown.Item>
+                  </Link>
+                  <Link legacyBehavior href="/queen-acoustic" passHref>
+                    <NavDropdown.Item className="gold-text">Queen Acoustic</NavDropdown.Item>
+                  </Link>
+                  <Link legacyBehavior href="/gioi-thieu/he-thong-queen" passHref>
+                    <NavDropdown.Item>Hệ thống Queen</NavDropdown.Item>
+                  </Link>
+                </NavDropdown>
+                <NavDropdown title="Lịch diễn dự kiến" id="nav-dropdown-lich">
+                  <Link legacyBehavior href="/lich-dien-du-kien/lich-theo-ca-si" passHref>
+                    <NavDropdown.Item>Lịch theo ca sĩ</NavDropdown.Item>
+                  </Link>
+                  <Link legacyBehavior href="/lich-dien-du-kien/lich-theo-tuan-thang" passHref>
+                    <NavDropdown.Item>Lịch theo tuần/tháng</NavDropdown.Item>
+                  </Link>
+                </NavDropdown>
+                <NavDropdown title="Tin tức" id="nav-dropdown-tin-tuc">
+                  <Link legacyBehavior href="/tin-tuc/kham-pha" passHref>
+                    <NavDropdown.Item>Khám phá</NavDropdown.Item>
+                  </Link>
+                  <Link legacyBehavior href="/tin-tuc/tuyen-dung" passHref>
+                    <NavDropdown.Item>Tuyển dụng</NavDropdown.Item>
+                  </Link>
+                </NavDropdown>
+                <NavDropdown title="Liên Hệ" id="nav-dropdown-lien-he">
+                  <Link legacyBehavior href="/lien-he" passHref>
+                    <NavDropdown.Item>Thông Tin Liên Hệ</NavDropdown.Item>
+                  </Link>
+                  <Link legacyBehavior href="/lien-he/dia-chi" passHref>
+                    <NavDropdown.Item>Địa Chỉ</NavDropdown.Item>
+                  </Link>
+                </NavDropdown>
               </Nav>
               <Nav className="header-right">
                 <a
